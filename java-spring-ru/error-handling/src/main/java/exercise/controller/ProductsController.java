@@ -53,7 +53,6 @@ public class ProductsController {
         if (maybeProduct.isPresent()) {
             var product = maybeProduct.get();
 
-            product.setId((data.getId()));
             product.setTitle((data.getTitle()));
             product.setPrice((data.getPrice()));
 
