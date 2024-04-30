@@ -69,8 +69,7 @@ public class ProductsController {
 
         productMapper.update(productData, product);
         productRepository.save(product);
-        var productDto = productMapper.map(product);
-        return productDto;
+        return productMapper.map(product);
     }
     // END
 }
