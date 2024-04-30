@@ -37,12 +37,9 @@ public class ProductsController {
     @ResponseStatus(HttpStatus.OK)
     public List<ProductDTO> index() {
         var products = productRepository.findAll();
-        List<ProductDTO> result = new ArrayList<>();
-
-        for (Product item : products) {
-            result.add(productMapper.map(item));
-        }
-        return result;
+        return products.stream()
+            .map(product -> productMapper.map(product))
+            .toList();
     }
 
     @GetMapping(path = "/{id}")

@@ -5,7 +5,7 @@ import exercise.dto.ProductDTO;
 import exercise.dto.ProductUpdateDTO;
 import exercise.model.Product;
 import org.mapstruct.*;
-import org.springframework.web.bind.annotation.Mapping;
+
 
 import java.util.List;
 
@@ -21,7 +21,7 @@ public abstract class ProductMapper {
     @Mapping(target = "barcode", source = "vendorCode")
     public abstract Product map(ProductCreateDTO dto);
 
-    @InheritConfiguration
+    @Mapping(target = "cost", source = "price")
     public abstract void update(ProductUpdateDTO dto, @MappingTarget Product model);
 
     @Mapping(target = "title", source = "name")
