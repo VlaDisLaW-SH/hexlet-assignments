@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import exercise.repository.ProductRepository;
@@ -34,7 +36,13 @@ public class ProductsController {
     @GetMapping(path = "")
     @ResponseStatus(HttpStatus.OK)
     public List<ProductDTO> index() {
-        return productMapper.map(productRepository.findAll());
+        var products = productRepository.findAll();
+        List<ProductDTO> result = new ArrayList<>();
+
+        for (Product item : products) {
+            result.add(productMapper.map(item));
+        }
+        return result;
     }
 
     @GetMapping(path = "/{id}")

@@ -28,10 +28,5 @@ public abstract class ProductMapper {
     @Mapping(target = "price", source = "cost")
     @Mapping(target = "vendorCode", source = "barcode")
     public abstract ProductDTO map(Product model);
-
-    @Mapping(target = "title", source = "name")
-    @Mapping(target = "price", source = "cost")
-    @Mapping(target = "vendorCode", source = "barcode")
-    public abstract List<ProductDTO> map(List<Product> model);
 }
 // END
