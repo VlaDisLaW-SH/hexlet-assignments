@@ -49,3 +49,23 @@ class AppTest {
     
     // END
 }
+
+/*
+@Test
+    void testGetSize() throws Exception {
+        CompletableFuture<Long> result = App.getDirectorySize(
+            "src/test/resources/dir/"
+        );
+
+        assertThat(result.get()).isEqualTo(26);
+    }
+
+    @Test
+    void testGetEmptyDirSize() throws Exception {
+        CompletableFuture<Long> result = App.getDirectorySize(
+            "src/test/resources/empty_dir/"
+        );
+
+        assertThat(result.get()).isEqualTo(0);
+    }
+ */
